@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type ="text/javascript">
+var user = confirm("Do you want to play rock paper scissors");
+var Choice = ["r","p","s"];
+   
+
+var userWins  = 0;
+var userLoses = 0;
+var ties  = 0; 
+
+
+
+if(user){
+    for (var i = 0; i < 10; i++) {
+           var userChoice = prompt("Type in 'r', 'p' or 's' now:");
+               userChoice = userChoice.toLowerCase();
+             console.log("the user choice is : " + userChoice );
+
+        if(userChoice === "r" || userChoice === "p" || userChoice === "s"){
+            var computerTurn=Choice[Math.round(Math.random() * Choice.length)];  
+            console.log("computers choice  :" + computerTurn);
+            alert("computers choice is : " + computerTurn);
+
+             if(userChoice === "r" && computerTurn === "s" 
+             || userChoice === "s" && computerTurn ==="p" 
+             || userChoice === "p" && computerTurn === "r"){
+                    userWins++;
+                 alert("the user wins :  " + userWins );
+                      
+             }
+
+             else if(userChoice === "r" && computerTurn ==="p" 
+             || userChoice ==="s" && computerTurn ==="r"
+             || userChoice ==="p" && computerTurn === "s"){
+                   userLoses++;
+                   alert("the user loses is :" + userLoses );
+                         
+                         
+             }
+
+             else if (userChoice === computerTurn){
+                 ties++;
+                 alert("the ties are :  " + ties );        
+             }     
+         } 
+    } 
+}  
+else{
+    alert("Thankyou");
+}
+
+        alert("Total wins: " + userWins + "\nTotal ties: " + ties + "\nTotal losses: " + userLoses);
+</script>   
+</body>
+</html>
